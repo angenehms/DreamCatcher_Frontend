@@ -39,3 +39,44 @@ body {
 .animate-pulse-ring {
   animation: pulse-ring 2s ease-in-out infinite;
 }
+
+.seat-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 선택 가능한 일반 좌석에 마우스를 올렸을 때 (연한 블루 테마) */
+.seat-button:not(:disabled):not(.selected):hover {
+  background-color: #E8F3FF !important;
+  border-color: #3182F6 !important;
+  transform: translateY(-2px) scale(1.08) !important;
+  box-shadow: 0 6px 16px rgba(49, 130, 246, 0.15) !important;
+  z-index: 10;
+}
+
+/* 이미 선택된 좌석에 마우스를 올렸을 때 (강조만) */
+.seat-button.selected:hover {
+  transform: translateY(-2px) scale(1.08) !important;
+  box-shadow: 0 8px 20px rgba(49, 130, 246, 0.4) !important;
+  filter: brightness(1.1);
+  z-index: 10;
+}
+
+.seat-button:not(:disabled):active {
+  transform: scale(0.95) !important;
+  filter: brightness(0.9);
+}
+
+.reserve-button {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.reserve-button:not(:disabled):hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(49, 130, 246, 0.45) !important;
+  filter: brightness(1.05);
+}
+
+.reserve-button:not(:disabled):active {
+  transform: scale(0.97);
+  filter: brightness(0.95);
+}

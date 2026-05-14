@@ -30,7 +30,7 @@ export const WaitingRoomPage = () => {
         const result = await waitingService.checkStatus();
         const ahead = Number(result.aheadCount);
 
-        if (result.status === 'ACTIVE' || (!isNaN(ahead) && ahead === 0)) {
+        if (result.status === 'ACTIVE') {
           // ACTIVE 상태이거나 대기 인원이 0명이면 → 폴링 중단 후 이동
           isNavigatingRef.current = true;
           if (intervalRef.current) {
@@ -240,7 +240,7 @@ export const WaitingRoomPage = () => {
                 lineHeight: 1,
                 transition: 'color 0.3s ease',
               }}>
-                {rank !== null ? rank.toLocaleString() : '—'}
+                {rank !== null ? Math.max(0, rank - 1).toLocaleString() : '—'}
               </p>
               <p style={{ fontSize: '13px', color: '#B0B8C1', margin: 0 }}>
                 {rank !== null
