@@ -1,3 +1,6 @@
+/**
+ * Payment 페이지에서 사용하는 UI 스타일 정의 파일입니다.
+ */
 import type { CSSProperties } from 'react';
 
 export const styles: Record<string, CSSProperties> = {

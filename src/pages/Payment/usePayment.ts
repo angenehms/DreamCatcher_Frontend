@@ -3,11 +3,17 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
 import { paymentService } from '../../services/payment';
 
+/**
+ * 결제 페이지의 비즈니스 로직을 관리하는 커스텀 훅입니다.
+ * 결제 요청 처리 및 성공/실패에 따른 리다이렉션을 담당합니다.
+ */
 export const usePayment = () => {
   const { seatId } = useParams<{ seatId: string }>();
   const userId = useAuthStore((state) => state.userId);
   const navigate = useNavigate();
+  // 결제 진행 중 상태 (버튼 비활성화용)
   const [isProcessing, setIsProcessing] = useState(false);
+  // 결제 성공 후 표시할 메시지
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
   const handlePayment = async () => {
