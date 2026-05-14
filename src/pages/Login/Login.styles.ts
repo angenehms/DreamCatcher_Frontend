@@ -1,0 +1,90 @@
+import type { CSSProperties } from 'react';
+
+export const styles: Record<string, CSSProperties> = {
+  container: {
+    minHeight: '100vh',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    background: 'linear-gradient(135deg, #EEF2FF 0%, #F0F4FF 50%, #F5F0FF 100%)',
+    padding: '24px',
+  },
+  card: {
+    width: '100%',
+    maxWidth: '440px',
+    background: 'rgba(255, 255, 255, 0.85)',
+    backdropFilter: 'blur(24px)',
+    WebkitBackdropFilter: 'blur(24px)',
+    borderRadius: '32px',
+    border: '1px solid rgba(255,255,255,0.9)',
+    boxShadow: '0 8px 40px rgba(49, 130, 246, 0.10), 0 2px 8px rgba(0,0,0,0.06)',
+    padding: '56px 48px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '48px',
+  },
+  logoWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '24px',
+  },
+  logoIcon: {
+    width: '64px',
+    height: '64px',
+    borderRadius: '20px',
+    background: 'linear-gradient(135deg, #3182F6, #6366F1)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 8px 24px rgba(49,130,246,0.35)',
+  },
+  label: {
+    fontSize: '13px',
+    fontWeight: '600',
+    color: '#4E5968',
+    letterSpacing: '0.4px',
+    textTransform: 'uppercase',
+    paddingLeft: '2px',
+  },
+  footerNote: {
+    textAlign: 'center',
+    fontSize: '13px',
+    color: '#B0B8C1',
+    fontWeight: '500',
+    marginTop: '-16px',
+  }
+};
+
+export const getInputStyle = (isFocused: boolean): CSSProperties => ({
+  width: '100%',
+  height: '56px',
+  background: isFocused ? '#FFFFFF' : '#F7F8FA',
+  border: isFocused ? '1.5px solid #3182F6' : '1.5px solid #E5E8EB',
+  borderRadius: '16px',
+  padding: '0 20px',
+  fontSize: '16px',
+  fontWeight: '500',
+  color: '#191F28',
+  outline: 'none',
+  transition: 'all 0.2s ease',
+  boxShadow: isFocused ? '0 0 0 4px rgba(49,130,246,0.10)' : 'none',
+  fontFamily: 'inherit',
+});
+
+export const getButtonStyle = (isValid: boolean): CSSProperties => ({
+  marginTop: '8px',
+  height: '56px',
+  width: '100%',
+  background: isValid ? 'linear-gradient(135deg, #3182F6, #4F6EF7)' : '#C2D6FA',
+  border: 'none',
+  borderRadius: '16px',
+  color: 'white',
+  fontSize: '16px',
+  fontWeight: '700',
+  letterSpacing: '-0.1px',
+  cursor: isValid ? 'pointer' : 'not-allowed',
+  transition: 'all 0.2s ease',
+  boxShadow: isValid ? '0 4px 16px rgba(49, 130, 246, 0.35)' : 'none',
+  fontFamily: 'inherit',
+});
