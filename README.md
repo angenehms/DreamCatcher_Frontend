@@ -6,6 +6,22 @@ DreamCatcher는 대규모 트래픽이 집중되는 콘서트 예매 환경에�
 
 ---
 
+## 📸 Screenshots
+
+### 1. 로그인 (Login)
+- 사용자 식별을 위한 깔끔한 인터페이스
+<img src="./screenshots/login.png" width="80%" />
+
+### 2. 실시간 대기열 (Waiting Room)
+- 실시간 폴링을 통한 대기 순번 안내 및 인터랙티브 효과
+<img src="./screenshots/waiting.png" width="80%" />
+
+### 3. 좌석 선택 (Seat Selection)
+- 동적 그리드 기반의 프리미엄 좌석 선택 배치도
+<img src="./screenshots/seat.png" width="80%" />
+
+---
+
 ## 🏗️ Architecture: 관심사 분리 (SoC)
 
 본 프로젝트는 유지보수성과 확장성을 극대화하기 위해 모든 페이지 컴포넌트를 세 가지 역할로 엄격히 분리하여 관리합니다.
